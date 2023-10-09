@@ -4,3 +4,14 @@
     box-sizing: border-box;
 }
 
+
+#cards_container{
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+	gap: 40px;
+}
+
+.card-img-top{
+    cursor: pointer;
+}
