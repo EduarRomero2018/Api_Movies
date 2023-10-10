@@ -4,6 +4,21 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: black;
+}
+
+.color_nav{
+    background-color: #032541;
+}
+
+.color_nav a{
+    color: rgba(255, 255, 255, 0.562);
+
+}
+.color_nav a:hover{
+    color: white;
+}
 
 #cards_container{
     background-color: white;
@@ -12,6 +27,22 @@
 	gap: 40px;
 }
 
+ img.image{
+    width: 50px;
+}
+
 .card-img-top{
     cursor: pointer;
+}
+
+footer{
+    margin-top: 10px;
+}
+footer.color{
+    background-color: black;
+    height: 100px;
+}
+
+.list-group > li{
+    font-size: 13px;
 }
