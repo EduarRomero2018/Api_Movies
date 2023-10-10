@@ -6,20 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/styles/index.css">
     <title>Movies(API)</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
-    <div class="cotainer">
-        <div class="p-5 mb-4 bg-light rounded-3">
-            <div class="container-fluid py-5">
-              <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-              <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
-              <button class="btn btn-primary btn-lg" type="button">Example button</button>
+    <nav class=" color_nav navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="./public/mi-logo.png" alt="Logo" class="d-inline-block align-text-top image">
+            </a>
+            <a class="navbar-brand" href="#">Movie</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="#">Populares</a>
+                    <a class="nav-link" href="#">Mejores Calificadas</a>
+                    <a class="nav-link" href="./visual.html">Ver Grafica</a>
+                </div>
             </div>
-          </div>
+        </div>
+    </nav>
+
+    <!-- contenedor image -->
+    <div class="container stylos_img">
+        <figure>
+            <img src="./public/fondo.jpg" class="img-fluid" alt="image fondo">
+        </figure>
     </div>
-    <div class="container">
+
+    <!-- <div class="container">
         <div class="row align-items-md-stretch">
             <div class="col-md-6">
                 <div class="h-100 p-5 text-white bg-primary border rounded-3">
@@ -38,41 +57,41 @@
                                 <legend>Busqueda de Paciente por identificación</legend>
                                 <input id="search" class="form-control form-control-lg" type="text"
                                     placeholder="Numero Identificación">
-                                <!-- <input id="search" class="navbar__input" type="text" placeholder="search pokemon"> -->
                             </fieldset>
                         </form>
                     </div>
                     <br>
                     <button type="button" class="btn btn-secondary">Consultar</button>
-                    <button type="button" id="generar_citas" class="btn btn-outline-secondary border border-danger-subtle">Cargar todas las Citas</button>
+                    <button type="button" id="generar_citas"
+                        class="btn btn-outline-secondary border border-danger-subtle">Cargar todas las Citas</button>
                 </div>
             </div>
         </div>
         <hr>
-    </div>
+    </div> -->
 
     <section>
         <div class="container-fluid">
             <div class="row">
-                <h2 class="text-center">Las mas Populares</h2>
+                <div class="alls">
+
+                </div>
+                <!-- <h2 class="alls text-center"> </h2> -->
                 <div id="cards_container"></div>
             </div>
         </div>
-
-
     </section>
 
-    <!-- <main>
-        <section class="cards-container">
-        </section>
-        <section class="buttons-container">
-        </section>
-    </main> -->
+    <footer class="color text-center">
+        <div class="p-3">
+            <button id="anterior" type="button" class="btn btn-secondary">Anterior</button>
+            <button id="siguiente" type="button" class="btn btn-secondary">Siguiente</button>
+        </div>
+    </footer>
 
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
     <script type="module" src="./js/main.js"></script>
 </body>
 
