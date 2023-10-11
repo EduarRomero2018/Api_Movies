@@ -1,7 +1,5 @@
 // Se recibe la API completa con los Query parameters
 
-// * EndoPoint -> Citas Pacientes.
-const API_PACIENTES = 'http://net.caminosips.com:3000/getCitasActualizadasEntreFechas?fechaHoraInicio=20231006&fechaHoraFin=20231006';
 
 // * EndoPoint -> Get a list of movies ordered by popularity.
 const popularMovies = 'https://api.themoviedb.org/3/movie/popular?api_key=285183e62c53d84f3d35c88747b0ab65&language=es-ES'
