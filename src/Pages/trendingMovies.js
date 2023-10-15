@@ -49,7 +49,7 @@ async function getTrendingMovies() {
                 contenmovie.innerHTML = trendingMovies.map((movie) =>
                     `
               <div class="movie-container card">
-              <img src="https://image.tmdb.org/t/p/w300/${movie.poster_path}" class = "img_size" alt="Image">
+              <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class = "img_size" alt="Image">
               <ul class="list-group list-group-flush">
               <li class="list-group-item date"> <b>Fecha de Lanzamiento -> </b>${movie.release_date}</li>
               <li class="list-group-item"> <b>Nivel de Puntuación -> </b>${movie.vote_average}</li>
