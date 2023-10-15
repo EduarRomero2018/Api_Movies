@@ -18,13 +18,24 @@ const General_Movies = 'https:api.themoviedb.org/3/movie/550?api_key=285183e62c5
 // EndPoint Ruta para cargar las images
 const image = 'https://image.tmdb.org/t/p/w500/'
 
+// EndPoint buscar película por nombre
+const searchMoviesTrending = 'https://api.themoviedb.org/3/trending/movie';
+
+const APIKEY = 'api_key=285183e62c53d84f3d35c88747b0ab65';
+
+const complentstrendingtime ='day?'
+
+const complementslanguaje = '&language=es-ES'
 
 
 const TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyODUxODNlNjJjNTNkODRmM2QzNWM4ODc0N2IwYWI2NSIsInN1YiI6IjY1MjE2ZTNkZWE4NGM3MDBhZWVkY2Y3OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.goau0xcGa6JmQMWV16nqSuVBXwyG-NB1Ulz1gjs87yY';
 
-const APIKEY = '285183e62c53d84f3d35c88747b0ab65';
 
 export {
     popularMovies,
-    image
+    image,
+    searchMoviesTrending,
+    APIKEY,
+    complentstrendingtime,
+    complementslanguaje
 }

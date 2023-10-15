@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 
-body{
-    background-color: black;
+.colored_background{
+    background-color:#032541;
 }
 
 .color_nav{
@@ -17,11 +17,11 @@ body{
 
 }
 .color_nav a:hover{
-    color: white;
+    color: #016A70;
 }
 
 #cards_container{
-    background-color: white;
+    background-color: #001524;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 	gap: 40px;
@@ -40,9 +40,36 @@ footer{
 }
 footer.color{
     background-color: black;
-    height: 100px;
+    height: 200px;
+    margin-bottom: 0;
 }
+
+footer img{
+    width: 100px;
+  }
+
+  footer p{
+    color: #f2f2f276;
+  }
 
 .list-group > li{
     font-size: 13px;
 }
+
+
+.movieList {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    height:auto;
+    margin-bottom: 10px;
+    /* padding-left: 24px;
+    padding-bottom: 16px; */
+  }
+
+  .movieList .movie-container {
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+

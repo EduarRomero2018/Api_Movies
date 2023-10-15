@@ -1,46 +1,52 @@
 // importamos el EndPoint a utilizar
 import { popularMovies } from "./endPoints.js";
 import { image } from "./endPoints.js";
-import { cards_container, siguiente, anterior} from "../Components/nodos.js";
-
-
-// por defecto siempre vamos a consultar la pagina 1
-let page = 1;
+import { cards_container, siguiente, anterior } from "../Components/nodos.js";
 
 const complemens = '&page='; //EndPoints para la paginación
 
-// le damos funcionalidad al boton siguiente para que nos pase a las siguiente 20 películas
-siguiente.addEventListener('click', () =>{
-    console.log('Diste Click siguiente');
-    if (page < 40422) {
-        page += 1;
-        fetch_API();
-    }
-})
+// por defecto siempre vamos a consultar la pagina 1
+let page = 1;
+let allList = 4098;
 
-// le damos funcionalidad al boton anterior limitando que solo se cumpla cuando sea mayor a 1
-anterior.addEventListener('click', () =>{
-    console.log('Diste Click boton anterior');
-    if (page > 1) {
-        page -= 1;
-        fetch_API();
-    }
-})
+function nextBefore() {
 
+    // le damos funcionalidad al boton siguiente para que nos pase a las siguiente 20 películas
+    siguiente.addEventListener('click', () => {
+        console.log('Diste Click siguiente');
+        if (page < allList) {
+            page += 1;
+            fetch_API();
+        }
+    })
+
+    // le damos funcionalidad al boton anterior limitando que solo se cumpla cuando sea mayor a 1
+    anterior.addEventListener('click', () => {
+        // console.log('Diste Click boton anterior');
+        if (page > 1) {
+            page -= 1;
+            fetch_API();
+        }
+    })
+}
+
+nextBefore();
 
 // Api
 const fetch_API = async () => {
 
     try {
         const respuesta = await fetch(`${popularMovies}+${complemens}+${page}`);
-        console.log(respuesta);
+        // console.log(respuesta);
+
         // Validamos los diferentes estado que puede tener la respuesta
         if (respuesta.status === 200) {
             const datos = await respuesta.json();
             console.log(datos);
             let peliculas = '';
-            console.log('Cantidad de peliculas por pagina -> ' + datos.results.length);
-            console.log('Total de películas populares -> ' + datos.total_results);
+            // console.log('Cantidad de peliculas por pagina -> ' + datos.results.length);
+            let allListMovie = datos.total_pages;
+            // console.log(allListMovie);
 
             datos.results.forEach(pelicula => {
                 peliculas = peliculas + `
@@ -48,7 +54,6 @@ const fetch_API = async () => {
                 <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class = "card-img-top" alt="Image">
                 <div class="card-body">
                 <h5 class="card-title">${pelicula.title}</h5>
-
             </div>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item date"> <b>Fecha de Lanzamiento -> </b>${pelicula.release_date}</li>
@@ -57,7 +62,6 @@ const fetch_API = async () => {
             </ul>
         </div>
                 `
-                // console.log(pelicula.title);
             });
 
             cards_container.innerHTML = peliculas;
@@ -73,11 +77,13 @@ const fetch_API = async () => {
         }
 
     } catch (error) {
+
         console.log('Error', error);
     }
 }
 
 // Exportación de funciones a utilizar
 export {
-    fetch_API
+    fetch_API,
+    // allListMovie,
 }
