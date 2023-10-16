@@ -1,12 +1,11 @@
 const cards_container = document.querySelector("#cards_container");
 // guardamos el id del buscador de películas
 const search = document.querySelector("#search");
-// const seeapponitment = document.querySelector("#generar_citas");
-// boton siguiente de las peliculas populares
-const siguiente = document.querySelector("#siguiente");
+const siguiente = document.querySelector("#siguiente");// boton siguiente de las peliculas populares
+const anteriortrending = document.querySelector("#anteriortrending"); //btn anterior seccion trending
+const siguientetrending = document.querySelector("#siguientetrending"); //btn siguiente seccion trending
+const categories = document.querySelector("#categories"); //btn siguiente seccion categories
 
-const anteriortrending = document.querySelector("#anteriortrending");
-const siguientetrending = document.querySelector("#siguientetrending");
 
 // boton anterior de las peliculas populares
 const anterior = document.querySelector("#anterior");
@@ -26,5 +25,6 @@ export{
     anterior,
     graphic,
     anteriortrending,
-    siguientetrending
+    siguientetrending,
+    categories
 }

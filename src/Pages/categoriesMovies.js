@@ -1,37 +1,17 @@
 import { complementslanguaje } from "../utils/endPoints.js";
-import { siguientetrending, anteriortrending} from "../Components/nodos.js";
+import { categories} from "../Components/nodos.js";
 
-const complemens = '&page='; //EndPoints para la paginación
+categories.addEventListener('click', (e) =>{
+    function presionaste(params) {
+        console.log('diste click');
+    }
+})
 
-// por defecto siempre vamos a consultar la pagina 1
-let page = 1;
+// presionaste();
 
-// llamamos a la funcion
-nextBeforeTrending();
 
-function nextBeforeTrending(){
 
-    // le damos funcionalidad al boton siguiente para que nos pase a las siguiente 20 películas
-    siguientetrending.addEventListener('click', () =>{
-        console.log('Diste Click siguiente');
-        if (page < 1000) {
-            page += 1;
-            getTrendingMovies();
-        }
-    })
-
-    // le damos funcionalidad al boton anterior limitando que solo se cumpla cuando sea mayor a 1
-    anteriortrending.addEventListener('click', () =>{
-        console.log('Diste Click boton anterior');
-        if (page > 1) {
-            page -= 1;
-            getTrendingMovies();
-        }
-    })
-
-}
-
-async function getTrendingMovies() {
+async function categoriesMovies() {
 
     try {
 
@@ -49,7 +29,7 @@ async function getTrendingMovies() {
                 contenmovie.innerHTML = trendingMovies.map((movie) =>
                     `
               <div class="movie-container card">
-              <img src="https://image.tmdb.org/t/p/w300/${movie.poster_path}" class = "img_size" alt="Image">
+              <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class = "img_size" alt="Image">
               <ul class="list-group list-group-flush">
               <li class="list-group-item date"> <b>Fecha de Lanzamiento -> </b>${movie.release_date}</li>
               <li class="list-group-item"> <b>Nivel de Puntuación -> </b>${movie.vote_average}</li>
@@ -77,4 +57,6 @@ async function getTrendingMovies() {
 
 }
 
-getTrendingMovies();
+export {
+    presionaste,
+}

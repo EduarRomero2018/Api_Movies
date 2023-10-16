@@ -21,6 +21,10 @@ const image = 'https://image.tmdb.org/t/p/w500/'
 // EndPoint buscar película por nombre
 const searchMoviesTrending = 'https://api.themoviedb.org/3/trending/movie';
 
+// Endpoint para buscar las películas proximas en extrenar
+const upcomingMoviesAll = 'https://api.themoviedb.org/3/movie/upcoming';
+
+
 const APIKEY = 'api_key=285183e62c53d84f3d35c88747b0ab65';
 
 const complentstrendingtime ='day?'
@@ -37,5 +41,6 @@ export {
     searchMoviesTrending,
     APIKEY,
     complentstrendingtime,
-    complementslanguaje
+    complementslanguaje,
+    upcomingMoviesAll
 }
