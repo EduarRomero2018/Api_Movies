@@ -3,8 +3,7 @@
 :root {
     --color_navbar: #032541;
     --fondo_color_body: #011b32;
-    --color_titulos: #8f6741;
-    --blanco_fondo: #fbfcfe;
+    --blanco_border: #fbfcfe69;
     --blanco_frontal: #ffffff;
     --tipografia_principal: 'tangerine';
     --Alumni: 'Alumni Sans Pinstripe', sans-serif;
@@ -27,7 +26,7 @@
 
 .styles_container h2{
     font-family: var(--tipografia_principal);
-    font-size: 70px;
+    font-size: 50px;
 }
 
 .colored_background{
@@ -93,9 +92,50 @@ footer img{
     padding-bottom: 16px; */
   }
 
+
   .movieList .movie-container {
     display: inline-block;
     margin-right: 8px;
   }
 
+  /* Estilos de la sección de moviescategories */
+.moviesByCategories{
+    border: 0.5px solid #014c7168;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    display: grid;
+    text-align: center;
+  }
+  .moviesByCategories ul{
+    margin: 10px;
+  }
+  .moviesByCategories li{
+    border-radius: 3px;
+    border: 1px solid #152d3969;
+    color: #ffffffc4;
+    font-family:var(--Alumni) ;
+    font-size: 20px;
+    display:inline;
+    transition:0.5s;
+    padding: 0px 10px;
+    text-decoration: none;
+  }
 
+  .moviesByCategories li:hover{
+    border-radius: 5px;
+    border: 1px solid #014b71;
+    transition: 1s;
+    padding: 0px 10px;
+    cursor: pointer;
+    background-color: #014b71;
+
+  }
+
+ /* article .hidden {
+    display: none;
+} */
+
+.hidden_container{
+    display: none;
+}

@@ -5,6 +5,8 @@ const siguiente = document.querySelector("#siguiente");// boton siguiente de las
 const anteriortrending = document.querySelector("#anteriortrending"); //btn anterior seccion trending
 const siguientetrending = document.querySelector("#siguientetrending"); //btn siguiente seccion trending
 const categories = document.querySelector("#categories"); //btn siguiente seccion categories
+const movieListCategories = document.getElementById("movieListCategories"); //contenedor padre que dentro tiene el contenedor hijo donde se despliegan la lista de las cataegorias
+const btncategories = document.getElementById("btncategories") //btn para mirar las categories
 
 
 // boton anterior de las peliculas populares
@@ -26,5 +28,7 @@ export{
     graphic,
     anteriortrending,
     siguientetrending,
-    categories
+    categories,
+    btncategories,
+    movieListCategories
 }

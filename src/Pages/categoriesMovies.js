@@ -1,43 +1,31 @@
 import { complementslanguaje } from "../utils/endPoints.js";
-import { categories} from "../Components/nodos.js";
-
-categories.addEventListener('click', (e) =>{
-    function presionaste(params) {
-        console.log('diste click');
-    }
-})
-
-// presionaste();
-
-
+// import { movieListCategories, btncategories} from "../Components/nodos.js";
 
 async function categoriesMovies() {
 
     try {
-
-        const respuesta = await fetch('https://api.themoviedb.org/3/trending/movie/day?api_key=285183e62c53d84f3d35c88747b0ab65' + complementslanguaje + complemens + page);
+        // https://api.themoviedb.org/3/genre/movie/list
+        const respuesta = await fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=285183e62c53d84f3d35c88747b0ab65' + complementslanguaje);
         // console.log(respuesta);
+
 
         if (respuesta.status === 200) {
             const datos = await respuesta.json();
-            console.log(datos);
+            // throw new Error("La ejecución se detiene aquí."); // Lanza una excepción
 
-            const trendingMovies = datos.results;
+            const moviesByCategories = datos.genres;
+            // console.log(moviesByCategories);
 
-            trendingMovies.forEach(movie => {
-                const contenmovie = document.querySelector('.movieTitle');
-                contenmovie.innerHTML = trendingMovies.map((movie) =>
+            moviesByCategories.forEach(moviecategorie => {
+                const contenmovie = document.querySelector('.moviesByCategories');
+                // console.log(moviecategorie.name);
+                contenmovie.innerHTML = moviesByCategories.map((moviecategorie) =>
                     `
-              <div class="movie-container card">
-              <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class = "img_size" alt="Image">
-              <ul class="list-group list-group-flush">
-              <li class="list-group-item date"> <b>Fecha de Lanzamiento -> </b>${movie.release_date}</li>
-              <li class="list-group-item"> <b>Nivel de Puntuación -> </b>${movie.vote_average}</li>
-              <li class="list-group-item"> <b>lenguaje -> </b>${movie.original_language}</li>
-          </ul>
-          </div>
+                <ul>
+                    <li> * ${moviecategorie.name}</li>
+                </ul>
               `
-                );
+                ).join('');
             });
 
         } else if (respuesta.status === 401) {
@@ -56,7 +44,26 @@ async function categoriesMovies() {
     }
 
 }
+categoriesMovies();
+
+
+// const btncategories = document.getElementById("btncategories");
+// const movieListCategories = document.getElementById("movieListCategories");
+
+btncategories.addEventListener("click", function() {
+    console.log('diste click');
+    // Verifica si el contenedor está oculto
+    if (movieListCategories.classList.contains("hidden_container")) {
+        // Muestra el contenedor
+        movieListCategories.classList.remove("hidden_container");
+    } else {
+        // Oculta el contenedor
+        movieListCategories.classList.add("hidden_container");
+    }
+});
+
+
 
 export {
-    presionaste,
+    categoriesMovies,
 }

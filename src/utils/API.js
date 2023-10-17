@@ -1,16 +1,15 @@
 // importamos el EndPoint a utilizar
 import { popularMovies, upcomingMoviesAll } from "./endPoints.js";
 import { image } from "./endPoints.js";
-import { cards_container, siguiente, anterior } from "../Components/nodos.js";
-// import { presionaste} from "../Pages/categoriesMovies.js";
+import { cards_container, siguiente, anterior} from "../Components/nodos.js";
 
-// presionaste();
 
 const complemens = '&page='; //EndPoints para la paginación
 
 // por defecto siempre vamos a consultar la pagina 1
 let page = 1;
 let allList = 4098;
+
 
 function nextBefore() {
 
@@ -97,7 +96,7 @@ const upcomingMovies = async () => {
             const filteredMovies = upcomingMoviesList.filter(element => element.release_date > todayDate);// Filtramos las películas que cumplan con la condicion
 
             if (filteredMovies.length > 0) {
-                console.log('Películas próximas lanzadas:', filteredMovies);
+                // console.log('Películas próximas lanzadas:', filteredMovies);
                 const contenMoviereleases = document.querySelector('.movieReleases');
                 contenMoviereleases.innerHTML = filteredMovies.map(element =>
                     `
