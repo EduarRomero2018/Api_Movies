@@ -52,7 +52,7 @@ const fetch_API = async () => {
 
             datos.results.forEach(pelicula => {
                 peliculas = peliculas + `
-        <div class="card text-left">
+        <div class="card text-center">
                 <img src="https://image.tmdb.org/t/p/w500/${pelicula.poster_path}" class = "card-img-top" alt="Image">
                 <div class="card-body">
                 <h5 class="card-title">${pelicula.title}</h5>
@@ -93,7 +93,7 @@ const upcomingMovies = async () => {
             const upcomingMoviesList = datos.results; //Guardamos el objeto en la variable
 
             const todayDate = new Date().toLocaleDateString().split('/').reverse().join('-'); // Formateamos la fecha actual a como viene en la API para poder hacer luego la comparación
-            const filteredMovies = upcomingMoviesList.filter(element => element.release_date > todayDate);// Filtramos las películas que cumplan con la condicion
+            const filteredMovies = upcomingMoviesList.filter(element => element.release_date >= todayDate);// Filtramos las películas que cumplan con la condicion
 
             if (filteredMovies.length > 0) {
                 // console.log('Películas próximas lanzadas:', filteredMovies);

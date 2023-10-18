@@ -46,11 +46,21 @@
 }
 
 #cards_container{
-    background-color: #001524;
+    /* background-color: #001524;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-	gap: 40px;
+	gap: 40px; */
+    background-color: #001524;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Cambia el tamaño mínimo y ajusta las columnas automáticamente */
+    gap: 20px;
 }
+
+.card {
+    width: 100%; /* Hace que cada tarjeta ocupe el 100% del ancho de su contenedor */
+    max-width: 400px; /* Establece un ancho máximo para las tarjetas en dispositivos móviles */
+}
+
 
  img.image{
     width: 50px;
