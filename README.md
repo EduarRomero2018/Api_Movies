@@ -2,9 +2,12 @@
 --Proyecto de Consumo de Peliculas
 * El Proyecto esta construido para estar actualizado de todas las peliculas que estan en carteleras y en el mercado actualmente.
 * la idea del desarrolo de este proyecto es consumir los diferentes End_Points que nos ofrece este servicio.
-* actualmente esta construido el módulo de consultar peliculas por popularidad y las graficas de las películas segun sea su calificación.
-* las consultas vienen en un JSON, esto ofrecido directamente de la API.
-* abajo en el footer se implementaron los botones de siguiente y anterior, estando estos ya con su funcionalidad.
+* actualmente esta construido las siguientes secciones:
+  -- mirar las categorias de las películas que nos ofrece la API.
+  -- miras las películas que estan proximas en salir, (valida por fecha actual).
+  -- películas por popularidad.
+  -- películas por tendencias.
+  -- se pueden mirar las películas segun sea su calificación por grafico, construido con ChartJS.
 
 -- Propositos
 
@@ -31,10 +34,6 @@
 * estilos
 * utilidades
 
-
-
-
-
-Consteuido por Eduardo Romero.
+Construido por Eduar Romero.
 
 
